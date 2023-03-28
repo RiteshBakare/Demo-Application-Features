@@ -68,6 +68,14 @@
         android:text="Images Functionality"
         />
 
-
+    <Button
+        android:id="@+id/btnNotification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:text="Push Notification"
+        android:backgroundTint="@color/teal_700"
+        />
 
 </LinearLayout>

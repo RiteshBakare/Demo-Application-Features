@@ -1,11 +1,19 @@
 package com.gmail.riteshbakare420.myDemoApp
 
 
+import android.Manifest
 import android.animation.Animator
 import android.annotation.SuppressLint
+import android.app.Notification
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
+import android.graphics.Color
 import android.media.MediaPlayer
 import android.net.Uri
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -13,6 +21,10 @@ import android.view.Menu
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.core.app.ActivityCompat
+import androidx.core.app.NotificationCompat
+import androidx.core.app.NotificationManagerCompat
+import androidx.core.content.ContextCompat
 import com.airbnb.lottie.LottieAnimationView
 
 
@@ -23,6 +35,12 @@ class MainActivity : AppCompatActivity() {
     private lateinit var btnAnimation: LottieAnimationView
 
     private lateinit var player: MediaPlayer
+
+    // Constance for Notification
+
+    val CHANNEL_ID = "CHANNEL_ID"
+    val CHANNEL_NAME = "CHANNEL_NAME"
+    val NOTIFICATION_ID = 0
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -62,7 +80,29 @@ class MainActivity : AppCompatActivity() {
         }
 
         findViewById<Button>(R.id.btnImages).setOnClickListener {
-            startActivity(Intent(this,ImagesWithCamera::class.java))
+            startActivity(Intent(this, ImagesWithCamera::class.java))
+        }
+
+        // Notification
+        createNotificationChannel() // this method will create an Notification channel
+
+        val notification = NotificationCompat.Builder(this, CHANNEL_ID)
+            .setContentTitle("this is My Notification !!! ")
+            .setContentText("this is the text in the Notification :-) ")
+            .setSmallIcon(R.drawable.sandwithc)
+            .setPriority(NotificationCompat.PRIORITY_HIGH)
+            .build()
+
+        val notificationManager = NotificationManagerCompat.from(this)
+
+        findViewById<Button>(R.id.btnNotification).setOnClickListener {
+
+            if(ContextCompat.checkSelfPermission(this,Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
+                Toast.makeText(this,"Please Give permission to Notification",Toast.LENGTH_LONG).show()
+            }
+            else {
+                notificationManager.notify(NOTIFICATION_ID,notification)
+            }
         }
 
     }
@@ -78,6 +118,25 @@ class MainActivity : AppCompatActivity() {
         } catch (e: Exception) {
             Log.e("Player", "Sound not played ")
         }
+    }
+
+    // function for notification
+    fun createNotificationChannel() {
+
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.O) {
+            val channel = NotificationChannel(
+                CHANNEL_ID,
+                CHANNEL_NAME,
+                NotificationManager.IMPORTANCE_DEFAULT
+            ).apply {
+                lightColor = Color.RED
+                enableLights(true)
+            }
+            val manager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+
+            manager.createNotificationChannel(channel)
+        }
+
     }
 
 }
