@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center|top"
+    android:orientation="vertical"
+    tools:context=".ActivitySecond">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/my_tool_bar"
+        style="@style/ThemeOverlay.Material3.Toolbar.Surface"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:elevation="1dp"
+        app:menu="@menu/my_actionbar_menu"
+        app:title="@string/app_name" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        tools:text="sample" />
+
+    <TextView
+        android:id="@+id/tv_mail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        tools:text="sample" />
+
+    <androidx.constraintlayout.utils.widget.MotionButton
+        android:id="@+id/btnAlertDialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:padding="5dp"
+        android:text="Alert Dialog " />
+
+    <androidx.constraintlayout.utils.widget.MotionButton
+        android:id="@+id/btnCustomDialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:text="Custom Dialog " />
+
+    <androidx.constraintlayout.utils.widget.MotionButton
+        android:id="@+id/btnProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:text="Progress Bar " />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnShare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:src="@drawable/baseline_share_24" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/ThemeOverlay.Material3.AutoCompleteTextView.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_textToSpeech"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="20dp"
+            android:hint="enter something" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btnTextToSpeech"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="Text to Speech" />
+
+    <TextView
+        android:id="@+id/tv_timer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Time"
+        android:textSize="24sp"
+        android:textColor="@color/black"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:background="@color/teal_200"
+        android:layout_margin="10dp"
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="10dp"
+        >
+        <TextView
+            android:id="@+id/tv_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            />
+        <TextView
+            android:id="@+id/tv_stop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="Stop"
+            android:textColor="@color/black"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            />
+        <TextView
+            android:id="@+id/tv_Reset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="Reset"
+            android:textColor="@color/black"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"/>
+    </LinearLayout>
+
+</LinearLayout>

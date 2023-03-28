@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/et_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_margin="20dp"
+        android:hint="eg. Name"
+        android:inputType="textPersonName"
+        />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/et_mail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:hint="eg. mail"
+        android:inputType="textEmailAddress"
+        />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/Btn_animationView"
+        android:layout_width="250dp"
+        android:layout_height="150dp"
+        app:lottie_rawRes="@raw/btn_sumbit"
+        app:lottie_autoPlay="false"
+        app:lottie_loop="false"
+        android:layout_gravity="center"
+        />
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/ActivityRecyclerView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:text="Recycler View"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/playSound"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sound Player"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        />
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/btnImages"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Images Functionality"
+        />
+
+
+
+</LinearLayout>
