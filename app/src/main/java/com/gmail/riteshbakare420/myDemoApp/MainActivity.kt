@@ -71,6 +71,10 @@ class MainActivity : AppCompatActivity() {
         })
 
 
+        findViewById<Button>(R.id.btnCoroutines).setOnClickListener {
+            startActivity(Intent(this,CoroutinesActivity::class.java))
+        }
+
         findViewById<Button>(R.id.ActivityRecyclerView).setOnClickListener {
             startActivity(Intent(this, ActivityRecyclerView::class.java))
         }
