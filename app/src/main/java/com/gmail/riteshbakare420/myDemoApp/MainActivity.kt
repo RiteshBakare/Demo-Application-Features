@@ -109,6 +109,10 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        findViewById<Button>(R.id.btnNewActivity).setOnClickListener {
+            startActivity(Intent(this,NewActivity::class.java))
+        }
+
     }
 
     private fun playSound() {
